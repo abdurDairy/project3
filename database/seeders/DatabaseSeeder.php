@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\BloodGroup;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,5 +24,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         // $this->call('AdminSeeder');
         $this->call(AdminSeeder::class);
+        $this->call(BloodGroupSeeder::class);
     }
 }

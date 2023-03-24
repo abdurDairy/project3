@@ -12,12 +12,30 @@
         <meta name="keywords" content="admin template, Rubick Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
         <title>Admin Dashboard</title>
+        {{-- SUMMERNOTE CDN --}}
+        @stack('summernoteCSS')
+        {{-- BOOTSTRAP CSS --}}
+        @stack('bootstrapCSS')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}"/>
         <!-- END: CSS Assets-->
+
+        <style>
+            .activeForBlood{
+                background: rgb(238, 3, 3) !important;
+                color:bisque;
+            }
+            .blood_grp_btn{
+                background: rgb(5, 204, 204);
+                color:bisque;
+            }
+        </style>
     </head>
     <!-- END: Head -->
     <body class="main">
+
+        {{-- {{ auth('admin')->user()->name }} --}}
         <!-- BEGIN: Mobile Menu -->
         <div class="mobile-menu d-md-none">
             <div class="mobile-menu-bar">
@@ -58,19 +76,19 @@
                 <li>
                     <a href="javascript:;" class="menu">
                         <div class="menu__icon"> <i data-feather="box"></i> </div>
-                        <div class="menu__title"> Menu Layout <i data-feather="chevron-down" class="menu__sub-icon "></i> </div>
+                        <div class="menu__title">Blood Group<i data-feather="chevron-down" class="menu__sub-icon "></i> </div>
                     </a>
                     <ul class="">
                         <li>
-                            <a href="index.html" class="menu menu--active">
+                            <a href="{{ route('blood.index') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="menu__title"> Side Menu </div>
+                                <div class="menu__title"> Add New </div>
                             </a>
                         </li>
                         <li>
-                            <a href="simple-menu-light-dashboard-overview-1.html" class="menu menu--active">
+                            <a href="{{ route('blood.list') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="menu__title"> Simple Menu </div>
+                                <div class="menu__title"> Blood List  </div>
                             </a>
                         </li>
                         <li>
@@ -601,21 +619,21 @@
                         <a href="javascript:;.html" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="box"></i> </div>
                             <div class="side-menu__title">
-                                Menu Layout 
+                               Blood Group
                                 <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
                             </div>
                         </a>
                         <ul class="">
                             <li>
-                                <a href="index.html" class="side-menu">
+                                <a href="{{ route('blood.index') }}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Side Menu </div>
+                                    <div class="side-menu__title"> Add New </div>
                                 </a>
                             </li>
                             <li>
-                                <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
+                                <a href="{{ route('blood.list') }}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Simple Menu </div>
+                                    <div class="side-menu__title"> Blood List </div>
                                 </a>
                             </li>
                             <li>
@@ -1190,7 +1208,7 @@
                                 <div class="mb-5">
                                     <a href="index.html" class="d-flex align-items-center mt-2">
                                         <div class="w-8 h-8 image-fit">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/profile-14.jpg">
+                                            {{-- <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/profile-14.jpg"> --}}
                                         </div>
                                         <div class="ms-3">Robert De Niro</div>
                                         <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">robertdeniro@left4code.com</div>
@@ -1258,7 +1276,7 @@
                                 <div class="notification-content__title dark-text-gray-300">Notifications</div>
                                 <div class="cursor-pointer position-relative d-flex align-items-center ">
                                     <div class="w-12 h-12 flex-none image-fit me-1">
-                                        <img alt="Rubick Bootstrap HTML Admin Template" class="rounded-pill" src="dist/images/profile-14.jpg">
+                                        <img alt="Rubick Bootstrap HTML Admin Template" class="rounded-pill" src="{{ asset('custom image/iiuc_logo.png') }}">
                                         <div class="w-3 h-3 bg-theme-9 position-absolute end-0 bottom-0 rounded-pill border-2 border-white dark-border-dark-3"></div>
                                     </div>
                                     <div class="ms-2 overflow-hidden">
@@ -1267,58 +1285,6 @@
                                             <div class="fs-xs text-gray-500 ms-auto text-nowrap">01:10 PM</div>
                                         </div>
                                         <div class="w-full truncate text-gray-600 mt-0.5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
-                                    </div>
-                                </div>
-                                <div class="cursor-pointer position-relative d-flex align-items-center mt-5">
-                                    <div class="w-12 h-12 flex-none image-fit me-1">
-                                        <img alt="Rubick Bootstrap HTML Admin Template" class="rounded-pill" src="dist/images/profile-3.jpg">
-                                        <div class="w-3 h-3 bg-theme-9 position-absolute end-0 bottom-0 rounded-pill border-2 border-white dark-border-dark-3"></div>
-                                    </div>
-                                    <div class="ms-2 overflow-hidden">
-                                        <div class="d-flex align-items-center">
-                                            <a href="javascript:;" class="fw-medium truncate me-5 dark-text-gray-300">Angelina Jolie</a> 
-                                            <div class="fs-xs text-gray-500 ms-auto text-nowrap">06:05 AM</div>
-                                        </div>
-                                        <div class="w-full truncate text-gray-600 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
-                                    </div>
-                                </div>
-                                <div class="cursor-pointer position-relative d-flex align-items-center mt-5">
-                                    <div class="w-12 h-12 flex-none image-fit me-1">
-                                        <img alt="Rubick Bootstrap HTML Admin Template" class="rounded-pill" src="dist/images/profile-5.jpg">
-                                        <div class="w-3 h-3 bg-theme-9 position-absolute end-0 bottom-0 rounded-pill border-2 border-white dark-border-dark-3"></div>
-                                    </div>
-                                    <div class="ms-2 overflow-hidden">
-                                        <div class="d-flex align-items-center">
-                                            <a href="javascript:;" class="fw-medium truncate me-5 dark-text-gray-300">Robert De Niro</a> 
-                                            <div class="fs-xs text-gray-500 ms-auto text-nowrap">05:09 AM</div>
-                                        </div>
-                                        <div class="w-full truncate text-gray-600 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
-                                    </div>
-                                </div>
-                                <div class="cursor-pointer position-relative d-flex align-items-center mt-5">
-                                    <div class="w-12 h-12 flex-none image-fit me-1">
-                                        <img alt="Rubick Bootstrap HTML Admin Template" class="rounded-pill" src="dist/images/profile-1.jpg">
-                                        <div class="w-3 h-3 bg-theme-9 position-absolute end-0 bottom-0 rounded-pill border-2 border-white dark-border-dark-3"></div>
-                                    </div>
-                                    <div class="ms-2 overflow-hidden">
-                                        <div class="d-flex align-items-center">
-                                            <a href="javascript:;" class="fw-medium truncate me-5 dark-text-gray-300">Bruce Willis</a> 
-                                            <div class="fs-xs text-gray-500 ms-auto text-nowrap">03:20 PM</div>
-                                        </div>
-                                        <div class="w-full truncate text-gray-600 mt-0.5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
-                                    </div>
-                                </div>
-                                <div class="cursor-pointer position-relative d-flex align-items-center mt-5">
-                                    <div class="w-12 h-12 flex-none image-fit me-1">
-                                        <img alt="Rubick Bootstrap HTML Admin Template" class="rounded-pill" src="dist/images/profile-5.jpg">
-                                        <div class="w-3 h-3 bg-theme-9 position-absolute end-0 bottom-0 rounded-pill border-2 border-white dark-border-dark-3"></div>
-                                    </div>
-                                    <div class="ms-2 overflow-hidden">
-                                        <div class="d-flex align-items-center">
-                                            <a href="javascript:;" class="fw-medium truncate me-5 dark-text-gray-300">Kevin Spacey</a> 
-                                            <div class="fs-xs text-gray-500 ms-auto text-nowrap">01:10 PM</div>
-                                        </div>
-                                        <div class="w-full truncate text-gray-600 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
                                     </div>
                                 </div>
                             </div>
@@ -1328,12 +1294,12 @@
                     <!-- BEGIN: Account Menu -->
                     <div class="intro-x dropdown w-8 h-8">
                         <div class="dropdown-toggle w-8 h-8 rounded-pill overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false" data-bs-toggle="dropdown">
-                            <img alt="Rubick Tailwind HTML Admin Template" src="">
+                            <img alt="Rubick Tailwind HTML Admin Template" src="https://api.dicebear.com/5.x/initials/svg?seed={{ auth('admin')->user()->name }}">
                         </div>
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-theme-26 dark-bg-dark-6 text-white">
                                 <li class="p-2">
-                                    <div class="fw-medium text-white">Robert De Niro</div>
+                                    <div class="fw-medium text-white"> {{ auth('admin')->user()->name }}</div>
                                     <div class="fs-xs text-theme-28 mt-0.5 dark-text-gray-600">DevOps Engineer</div>
                                 </li>
                                 <li>
@@ -1389,61 +1355,13 @@
                                         <div class="intro-x">
                                             <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
                                                 <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-8.jpg">
+                                                    {{-- <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-8.jpg"> --}}
                                                 </div>
                                                 <div class="ms-4 me-auto">
                                                     <div class="fw-medium">Keanu Reeves</div>
                                                     <div class="text-gray-600 fs-xs mt-0.5">16 July 2021</div>
                                                 </div>
                                                 <div class="text-theme-6">-$62</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-11.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Denzel Washington</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">15 January 2021</div>
-                                                </div>
-                                                <div class="text-theme-6">-$53</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-7.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Morgan Freeman</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">7 July 2022</div>
-                                                </div>
-                                                <div class="text-theme-6">-$42</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-4.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Tom Cruise</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">19 September 2020</div>
-                                                </div>
-                                                <div class="text-theme-9">+$34</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-15.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Sylvester Stallone</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">30 September 2020</div>
-                                                </div>
-                                                <div class="text-theme-6">-$126</div>
                                             </div>
                                         </div>
                                         <a href="index.html" class="intro-x w-full d-block text-center rounded-2 py-3 border border-dotted border-theme-15 dark-border-dark-5 text-theme-16 dark-text-gray-600">View More</a> 
@@ -1458,9 +1376,14 @@
             <!-- END: Content -->
         </div>
         <!-- BEGIN: JS Assets-->
+        @stack('jquery')
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG7gNHAhDzgYmq4-EHvM4bqW1DNj2UCuk&libraries=places"></script>
         <script src="{{ asset('dist/js/app.js') }}"></script>
+        @stack('bootstrapJS')
+        @stack('customJS')
+        @stack('summernoteJS')
+        
         <!-- END: JS Assets-->
     </body>
 </html>

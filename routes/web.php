@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\BloodGroupController;
+use App\Http\Controllers\Backend\Teacher\TeachersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +26,23 @@ Route::prefix('admin')->group(function(){
     Route::get('/dashbord',[AdminController::class, 'Dashbord'])->name('admin.dashbord')->middleware('admin');
     Route::get('/logout',[AdminController::class, 'AdminLogout'])->name('admin.logout')->middleware('admin');
     Route::get('/register',[AdminController::class, 'Register'])->name('admin.register')->middleware('admin');
-    Route::post('/register/create',[AdminController::class, 'RegisterCreate'])->name('admin.register.create');
+    Route::post('/register/create',[AdminController::class, 'RegisterCreate'])->name('admin.register.create')->middleware('admin');
+
+
+    // *** BLOO GROUP
+    Route::get('blood-group-form', [BloodGroupController::class, 'bloodInfoIndex'])->name('blood.index')->middleware('admin');
+    Route::post('inert-blood', [BloodGroupController::class, 'InsertBlood'])->name('insert.blood')->middleware('admin');
+    Route::get('blood-group-list', [BloodGroupController::class, 'bloodList'])->name('blood.list')->middleware('admin');
+    Route::get('blood-group-detail/{id}', [BloodGroupController::class, 'bloodDetail'])->name('blood.detail');
+    Route::get('blood-group-edit/{id}', [BloodGroupController::class, 'editBloodGroup'])->name('edit.blood.group')->middleware('admin');
+    Route::put('blood-group-edit-data/{id}', [BloodGroupController::class, 'editBloodGroupData'])->name('edit.blood.group.data')->middleware('admin');
+    Route::get('blood-group-delete/{id}', [BloodGroupController::class, 'BloodGroupDelete'])->name('bloodGroup.delete')->middleware('admin');
+
+
+
+    // ** TEACHER PROFILE 
+    Route::get('add-new-teacher', [TeachersController::class, 'addTeacher'])->name('add.teacher')->middleware('admin');
+    Route::post('insert-teacher-data', [TeachersController::class, 'insertTeacherData'])->name('insert.teacher.data')->middleware('admin');
 
 });
 /**

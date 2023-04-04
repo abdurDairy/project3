@@ -19,7 +19,8 @@ class BloodGroupController extends Controller
     // * INSERT NEW BLOOD 
     public function InsertBlood(Request $request){
         $request->validate([
-            'bloddonor_name' => 'required',
+            'donor_name' => 'required',
+            'donor_birth_date' => 'required',
             'blood_group_id'=> 'required',
             'donor_phone' => 'required',
             'donor_department' => 'required',
@@ -59,7 +60,8 @@ class BloodGroupController extends Controller
     public function editBloodGroupData(Request $request,$id){
 
         $request->validate([
-            'bloddonor_name' => 'required',
+            'donor_name' => 'required',
+            'donor_birth_date' => 'required',
             'blood_group_id'=> 'required',
             'donor_phone' => 'required',
             'donor_department' => 'required',
@@ -67,14 +69,13 @@ class BloodGroupController extends Controller
 
         
         $updateBlood = BloodGroupDetails::find($id);
-        $updateBlood->update(
-            ['bloddonor_name' => $request->donor_name, 
-            'birth_date' => $request->donor_birth_date,
-            'contact_number' => $request->donor_phone,
-            'blood_group_id' => $request->blood_group_id,
-            'department_name' => $request->donor_department,
-            ]
-        );
+        $updateBlood->bloddonor_name = $request->donor_name;
+        $updateBlood->birth_date = $request->donor_birth_date;
+        $updateBlood->contact_number = $request->donor_phone;
+        $updateBlood->blood_group_id = $request->blood_group_id;
+        $updateBlood->department_name = $request->donor_department;
+        $updateBlood->save();
+    
         return redirect()->route('blood.list')->with('success','blood information updated');
     }
 

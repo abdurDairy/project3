@@ -28,30 +28,66 @@
                         @csrf
                         <label for="teacher_name" style="color:black;font-weight:bold;">Teacher Name <span style="color:red;font-weight:bold;">*</span></label>
                         <input name="teacher_name" id="teacher_name" type="text" class="form-control my-2" placeholder="donor name..">
-  
+                        @if ($errors->has('teacher_name'))
+                           <strong class="text-danger">{{ $errors->first('teacher_name') }}</strong> <br> <br>
+                        @endif
+
+
                         <label for="teacher_designetion" style="color:black;font-weight:bold;">Designation<span style="color:red;font-weight:bold;">*</span></label>
                         <input name="teacher_designetion" id="teacher_designetion" type="text" class="form-control my-2" placeholder="donor department name..">
+                        @if ($errors->has('teacher_designetion'))
+                           <strong class="text-danger">{{ $errors->first('teacher_designetion') }}</strong> <br> <br>
+                        @endif
 
+                        
                         <label for="accademic_profile" style="color:black;font-weight:bold;">Accademic Profile<span style="color:red;font-weight:bold;">*</span></label>
                         <textarea name="accademic_profile" id="accademic_profile" cols="30" rows="10" class="form-control"></textarea>
+                        @if ($errors->has('accademic_profile'))
+                          <strong class="text-danger">{{ $errors->first('accademic_profile') }}</strong> <br> <br>
+                        @endif
+
 
                         <label for="biography" style="color:black;font-weight:bold;">Your Biography<span style="color:red;font-weight:bold;">*</span></label>
                         <textarea name="biography" id="biography" cols="30" rows="10" class="form-control"></textarea>
+                        @if ($errors->has('biography'))
+                           <strong class="text-danger">{{ $errors->first('biography') }}</strong> <br> <br>
+                        @endif
+
 
                         <label for="research_areas" style="color:black;font-weight:bold;">Your Reasearch Area<span style="color:red;font-weight:bold;">*</span></label>
-                        <input name="research_areas" id="research_areas" type="text" class="form-control my-2" placeholder="insert your research areas">
-                        
-                        <label for="teaching_subject" style="color:black;font-weight:bold;">Your Teaching Subject List<span style="color:red;font-weight:bold;">*</span></label>
-                        <input name="teaching_subject" id="teaching_subject" type="text" class="form-control my-2" placeholder="insert your teaching subject list">
-                        
+                        {{-- <input name="research_areas" id="research_areas" type="text" class="form-control my-2" placeholder="insert your research areas"> --}}
+                        <textarea name="research_areas" id="research_areas" cols="30" rows="10" class="form-control"></textarea>
+                        @if ($errors->has('research_areas'))
+                           <strong class="text-danger">{{ $errors->first('research_areas') }}</strong> <br> <br>
+                        @endif
+
+
+                        <label for="teaching_subject" style="color:black;font-weight:bold;">Your teaching subject list<span style="color:red;font-weight:bold;">*</span></label>
+                        <textarea name="teaching_subject" id="teaching_subject" cols="30" rows="10" class="form-control"></textarea>
+                        @if ($errors->has('teaching_subject'))
+                           <strong class="text-danger">{{ $errors->first('teaching_subject') }}</strong> <br> <br>
+                        @endif
+
                         <label for="teacher_image" style="color:black;font-weight:bold;">Your Image<span style="color:red;font-weight:bold;">*</span></label>
                         <input name="teacher_image" id="teacher_image" type="file" class="form-control my-2">
+                        @if ($errors->has('teacher_image'))
+                          <strong class="text-danger">{{ $errors->first('teacher_image') }}</strong> <br> <br>
+                        @endif
+
 
                         <label for="teacher_phone" style="color:black;font-weight:bold;">contact number<span style="color:red;font-weight:bold;">*</span></label>
                         <input name="teacher_phone" id="teacher_phone" type="number" class="form-control my-2" placeholder="insert your phone number">
-                        
+                        @if ($errors->has('teacher_phone'))
+                          <strong class="text-danger">{{ $errors->first('teacher_phone') }}</strong> <br> <br>
+                        @endif
+
+
                         <label for="teacher_email" style="color:black;font-weight:bold;">Your Email<span style="color:red;font-weight:bold;">*</label>
                         <input name="teacher_email" id="teacher_email" type="email" class="form-control my-2" placeholder="insert your phone number">
+                        @if ($errors->has('teacher_email'))
+                          <strong class="text-danger">{{ $errors->first('teacher_email') }}</strong> <br> <br>
+                        @endif
+
                         
                         <label for="teacher_facebook" style="color:black;font-weight:bold;">Your FaceBook Link</label>
                         <input name="teacher_facebook" id="teacher_facebook" type="text" class="form-control my-2" placeholder="insert your Facebook Profile Link">
@@ -82,7 +118,7 @@
 @push('summernoteJS')
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script>
-    $('#accademic_profile').summernote({
+    $('#accademic_profile, #biography , #teaching_subject, #research_areas').summernote({
       placeholder: 'Insert Your Accademic Profile..',
       tabsize: 2,
       height: 120,
@@ -95,18 +131,6 @@
         ['view', ['codeview']]
       ]
     });
-    $('#biography').summernote({
-      placeholder: 'Insert Your Biography..',
-      tabsize: 2,
-      height: 120,
-      toolbar: [
-        ['font', ['bold', 'underline']],
-        ['color', ['color']],
-        ['table', ['table']],
-        ['insert', ['link']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['view', ['codeview']]
-      ]
-    });
+
   </script>
 @endpush

@@ -12,12 +12,12 @@
                             <div class="list mx-auto">
                                 <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="1"  class="">A+(ve)</a>
                                 <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="2"  class="">A-(ve)</a>
-                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="3"  class="">AB+(ve)</a>
-                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="4"  class="">AB-(ve)</a>
-                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="5"  class="">O+(ve)</a>
-                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="6"  class="">O-(ve)</a>
-                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="7"  class="">B+(ve)</a>
-                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="8"  class="">B-(ve)</a>
+                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="3"  class="">B+(ve)</a>
+                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="4"  class="">B-(ve)</a>
+                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="5"  class="">AB+(ve)</a>
+                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="6"  class="">AB-(ve)</a>
+                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="7"  class="">O+(ve)</a>
+                                <a href="#" class="blood_grp_btn btn  px-5 mb-3" data-id="8"  class="">O-(ve)</a>
                             </div>
 
                             {{-- INSERT SUCCESS MESSAGE  --}}

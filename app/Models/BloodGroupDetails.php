@@ -10,11 +10,13 @@ class BloodGroupDetails extends Model
     use HasFactory;
 
     protected $fillable = [
-        'bloddonor_name',
+        'donor_name',
+        'donor_birth_date',
         'blood_group_id',
-        'donor_phone',
         'donor_department',
+        'donor_phone',
     ];
+    
     public function blood_Group(){
         return $this->belongsTo(BloodGroup::class);
     }

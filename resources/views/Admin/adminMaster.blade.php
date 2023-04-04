@@ -91,10 +91,24 @@
                                 <div class="menu__title"> Blood List  </div>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" class="menu">
+                        <div class="menu__icon"> <i data-feather="box"></i> </div>
+                        <div class="menu__title">Add Teacher<i data-feather="chevron-down" class="menu__sub-icon "></i> </div>
+                    </a>
+                    <ul class="">
                         <li>
-                            <a href="top-menu-light-dashboard-overview-1.html" class="menu menu--active">
+                            <a href="{{ route('add.teacher') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="menu__title"> Top Menu </div>
+                                <div class="menu__title"> Add Form </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('teacher.list') }}" class="menu menu--active">
+                                <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="menu__title"> Teachers List  </div>
                             </a>
                         </li>
                     </ul>
@@ -636,10 +650,27 @@
                                     <div class="side-menu__title"> Blood List </div>
                                 </a>
                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+                            <div class="side-menu__title">
+                               Add Teacher
+                                <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                            </div>
+                        </a>
+                        <ul class="">
                             <li>
-                                <a href="top-menu-light-dashboard-overview-1.html" class="side-menu">
+                                <a href="{{ route('add.teacher') }}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Top Menu </div>
+                                    <div class="side-menu__title"> Add Form </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('teacher.list') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> Teachers List </div>
                                 </a>
                             </li>
                         </ul>
@@ -1380,6 +1411,10 @@
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG7gNHAhDzgYmq4-EHvM4bqW1DNj2UCuk&libraries=places"></script>
         <script src="{{ asset('dist/js/app.js') }}"></script>
+
+        {{-- * CKEDITOR * --}}
+        @stack('ckeditor')
+        
         @stack('bootstrapJS')
         @stack('customJS')
         @stack('summernoteJS')

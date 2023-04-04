@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BloodGroupController;
+use App\Http\Controllers\Backend\Routine\RoutineController;
 use App\Http\Controllers\Backend\Teacher\TeachersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,7 @@ Route::prefix('admin')->group(function(){
     Route::post('/register/create',[AdminController::class, 'RegisterCreate'])->name('admin.register.create')->middleware('admin');
 
 
-    // *** BLOO GROUP
+    // *** BLOOD GROUP
     Route::get('blood-group-form', [BloodGroupController::class, 'bloodInfoIndex'])->name('blood.index')->middleware('admin');
     Route::post('inert-blood', [BloodGroupController::class, 'InsertBlood'])->name('insert.blood')->middleware('admin');
     Route::get('blood-group-list', [BloodGroupController::class, 'bloodList'])->name('blood.list')->middleware('admin');
@@ -43,6 +44,18 @@ Route::prefix('admin')->group(function(){
     // ** TEACHER PROFILE 
     Route::get('add-new-teacher', [TeachersController::class, 'addTeacher'])->name('add.teacher')->middleware('admin');
     Route::post('insert-teacher-data', [TeachersController::class, 'insertTeacherData'])->name('insert.teacher.data')->middleware('admin');
+    Route::get('teacher-list', [TeachersController::class, 'TeacherList'])->name('teacher.list')->middleware('admin');
+    Route::get('teacher-edit/{id}', [TeachersController::class, 'TeacherEdit'])->name('teacher.edit')->middleware('admin');
+    Route::put('teacher-edit-data/{id}', [TeachersController::class, 'TeacherEditData'])->name('teacher.edit.data')->middleware('admin');
+    Route::get('teacher-delete/{id}', [TeachersController::class, 'TeacherDelete'])->name('teacher.delete')->middleware('admin');
+
+    
+    // ** ROUTINE
+    Route::get('add-routine', [RoutineController::class, 'addRoutine'])->name('add.routine')->middleware('admin');
+    Route::post('insert-routine', [RoutineController::class, 'indertRoutine'])->name('insert.routine')->middleware('admin');
+    Route::get('list-routine', [RoutineController::class, 'listRoutine'])->name('list.routine')->middleware('admin');
+    Route::get('update-routine-path/{id}', [RoutineController::class, 'updateRoutinePath'])->name('upated.routine.path')->middleware('admin');
+    Route::put('update-routine/{id}', [RoutineController::class, 'updateRoutine'])->name('upated.routine')->middleware('admin');
 
 });
 /**

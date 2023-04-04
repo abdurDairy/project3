@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('teacher_name');
             $table->string('teacher_designetion');
-            $table->string('accademic_profile');
-            $table->string('biography');
-            $table->string('research_areas');
-            $table->string('teaching_subject');
-            $table->string('teacher_image');
+            $table->longText('accademic_profile');
+            $table->longText('biography');
+            $table->longText('research_areas');
+            $table->longText('teaching_subject');
+            $table->longText('teacher_image');
             $table->string('teacher_phone');
             $table->string('teacher_email');
             $table->string('teacher_facebook')->nullable();

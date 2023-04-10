@@ -113,6 +113,32 @@
                         </li>
                     </ul>
                 </li>
+
+
+                <li>
+                    <a href="javascript:;" class="menu">
+                        <div class="menu__icon"> <i data-feather="box"></i> </div>
+                        <div class="menu__title">Routine<i data-feather="chevron-down" class="menu__sub-icon "></i> </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="{{ route('add.routine') }}" class="menu menu--active">
+                                <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="menu__title"> Add Routine </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('list.routine') }}" class="menu menu--active">
+                                <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="menu__title"> Teachers List  </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
                 <li>
                     <a href="{{ route('admin.register') }}" class="menu">
                         <div class="menu__icon"> <i data-feather="inbox"></i> </div>
@@ -675,6 +701,36 @@
                             </li>
                         </ul>
                     </li>
+
+
+                    <li>
+                        <a href="javascript:;.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+                            <div class="side-menu__title">
+                               Routine
+                                <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                            </div>
+                        </a>
+                        <ul class="">
+                            <li>
+                                <a href="{{ route('add.routine') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> Add Routine </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('list.routine') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> Teachers List </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+
+
                     <li>
                         <a href="{{ route('admin.register') }}" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="inbox"></i> </div>

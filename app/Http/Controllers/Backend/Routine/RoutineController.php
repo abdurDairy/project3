@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Backend\Routine;
 
-use App\Http\Controllers\Controller;
-use App\Models\RoutineSemester;
-use App\Models\RoutineSemesterDetails;
-use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Return_;
-
 use function Pest\version;
+use Illuminate\Http\Request;
+use App\Models\RoutineSemester;
+use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\DB;
+
+use App\Http\Controllers\Controller;
+use App\Models\RoutineSemesterDetails;
 
 class RoutineController extends Controller
 {
@@ -37,12 +38,12 @@ class RoutineController extends Controller
         $insert_routine_data->section = $request->section;
         $insert_routine_data->routine_details = $request->routine_details;
         $insert_routine_data->save();
-        return back();
+        return redirect()->route('list.routine')->with('success','routine inserted');
     }
 
     //*##########################__LIST ROUTINE__#############################
     public function listRoutine(){
-        $listData = RoutineSemesterDetails::all();
+        $listData = RoutineSemesterDetails::latest()->paginate(5);
         return view('Backend.Routine.RoutineList',compact('listData'));
     }
 
@@ -64,4 +65,10 @@ class RoutineController extends Controller
         $updateRoutine->save();
         return redirect()->route('list.routine')->with('success','routine updated');
     }
+    
+     //*##########################_DELETE ROUTINE__#############################
+     public function deleteRoutine($id){
+        DB::table('routine_semester_details')->where('id', $id)->delete();
+        return redirect()->route('list.routine')->with('error','Routine deleted');
+  } 
 }

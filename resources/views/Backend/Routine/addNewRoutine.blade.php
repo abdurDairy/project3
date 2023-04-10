@@ -21,7 +21,7 @@
             box-shadow:  20px 20px 60px #efccf0,
                          -20px -20px 60px #efcff0;">
                 <div style="background: #6a23ee;" class="card-header text-light position-absolute top-0 end-0">
-                    <h1 style="font-weight:bold;">Teacher Information</h1>
+                    <h1 style="font-weight:bold;">Add Routine</h1>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('insert.routine') }}" method="POST" enctype="multipart/form-data" class="px-5">
@@ -39,7 +39,7 @@
                            <strong class="text-danger">{{ $errors->first('semester_select') }}</strong> <br> <br>
                         @endif
 
-                        <select name="section" id="" class="form-control">
+                        <select name="section" id="" class="form-control my-2">
                           <option value="" selected disabled>Select section</option>
                           <option value="A">A</option>
                           <option value="B">B</option>

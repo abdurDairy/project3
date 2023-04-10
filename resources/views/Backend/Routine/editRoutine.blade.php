@@ -39,7 +39,7 @@
                            <strong class="text-danger">{{ $errors->first('semester_select') }}</strong> <br> <br>
                         @endif
 
-                        <select name="section" id="" class="form-control">
+                        <select name="section" id="" class="form-control my-2">
                           <option value="" selected disabled>Select section</option>
                           <option value="A">A</option>
                           <option value="B">B</option>

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BloodGroupController;
 use App\Http\Controllers\Backend\Routine\RoutineController;
 use App\Http\Controllers\Backend\Teacher\TeachersController;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -56,15 +57,30 @@ Route::prefix('admin')->group(function(){
     Route::get('list-routine', [RoutineController::class, 'listRoutine'])->name('list.routine')->middleware('admin');
     Route::get('update-routine-path/{id}', [RoutineController::class, 'updateRoutinePath'])->name('upated.routine.path')->middleware('admin');
     Route::put('update-routine/{id}', [RoutineController::class, 'updateRoutine'])->name('upated.routine')->middleware('admin');
+    Route::get('delete-routine/{id}', [RoutineController::class, 'deleteRoutine'])->name('delete.routine')->middleware('admin');
 
 });
 /**
  * /****ADMIN ROUTE END
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+// ***FRONT END START 
+
+// *HOME DETAILS
+  Route::get('/', [HomeController::class, 'home'])->name('index');
+  Route::prefix('teacher-profile')->group(function(){
+      Route::get('/{id}', [HomeController::class, 'homeEdit'])->name('index.details');
+  });
+
+
+
+  
+// ***FRONT END END 
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

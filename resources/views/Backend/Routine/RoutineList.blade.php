@@ -36,13 +36,17 @@
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{ route('upated.routine.path',$data->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                        <a href="" class="btn btn-sm btn-danger">Delete</a>
+                                        <a href="{{ route('delete.routine',$data->id) }}" class="btn btn-sm btn-danger">Delete</a>
                                     </div>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                         </table>
+
+                        <div class="row mt-3" style="padding:5px 0; background:#b4dddd;">
+                            {!! $listData->withQueryString()->links('pagination::bootstrap-4') !!}
+                        </div>
                     </div>
                 </div>
             </div>

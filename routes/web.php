@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BloodGroupController;
 use App\Http\Controllers\Backend\Result\ResultPublisherController;
+use App\Http\Controllers\Backend\Result\ResultUplodeController;
 use App\Http\Controllers\Backend\Routine\RoutineController;
 use App\Http\Controllers\Backend\Teacher\TeachersController;
 use App\Http\Controllers\Frontend\AboutController;
@@ -70,6 +71,10 @@ Route::prefix('admin')->group(function(){
     Route::put('subject-update{id}', [ResultPublisherController::class, 'subjectUpdate'])->name('subject.update')->middleware('admin');
     Route::get('subject-search', [ResultPublisherController::class, 'subjectSearch'])->name('subject.search')->middleware('admin');
     Route::get('delete-subject/{id}', [ResultPublisherController::class, 'deleteSubject'])->name('delete.subject')->middleware('admin');
+    
+    // **RESULT UPLOAD
+    Route::get('upload-result', [ResultUplodeController::class, 'uploadResult'])->name('upload.result')->middleware('admin');;
+    Route::get('select-subject', [ResultUplodeController::class, 'selectSubject'])->name('select.subject')->middleware('admin');;
 });
 /**
  * /****ADMIN ROUTE END

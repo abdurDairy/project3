@@ -2,7 +2,7 @@
 
 {{-- *SEARCH CONTENT* --}}
 @section('search-missing-fitch')
-<div class="search d-none d-sm-block">
+<div class="search ">
     <form action="{{ route('subject.search') }}" method="GET">
         @csrf
         <input type="text" class="search__input form-control border-transparent" name="search_for_subject" placeholder="Search...">
@@ -54,6 +54,9 @@
                                </tr>
                            @endforeach
                         </table>
+                        
+
+                       
                     </div>
                 </div>
             </div>

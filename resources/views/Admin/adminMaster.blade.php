@@ -106,9 +106,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('blood.list') }}" class="menu menu--active">
+                            <a href="{{ route('subject.list') }}" class="menu menu--active">
                                 <div class="menu__icon"> <i data-feather="activity"></i> </div>
-                                <div class="menu__title"> .... </div>
+                                <div class="menu__title"> Subject List </div>
                             </a>
                         </li>
                     </ul>
@@ -718,9 +718,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('blood.list') }}" class="side-menu">
+                                <a href="{{ route('subject.list') }}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> .... </div>
+                                    <div class="side-menu__title"> Subject List </div>
                                 </a>
                             </li>
                         </ul>
@@ -728,29 +728,7 @@
 
 
 
-                    <li>
-                        <a href="javascript:;.html" class="side-menu">
-                            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
-                            <div class="side-menu__title">
-                               Result
-                                <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
-                            </div>
-                        </a>
-                        <ul class="">
-                            <li>
-                                <a href="{{ route('add.subject') }}" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> Add New Subject </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('blood.list') }}" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
-                                    <div class="side-menu__title"> .... </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li>
                         <a href="javascript:;.html" class="side-menu">
                             <div class="side-menu__icon"> <i data-feather="box"></i> </div>
@@ -1342,12 +1320,9 @@
                     <!-- END: Breadcrumb -->
                     <!-- BEGIN: Search -->
                     <div class="intro-x position-relative me-3 me-sm-6">
-
                         {{-- *SEARCH BUTTON* --}}
                         @yield('search-missing-fitch')
-                        
                         <a class="notification d-sm-none" href="index.html"> <i data-feather="search" class="notification__icon dark-text-gray-300"></i> </a>
-                       
                     </div>
                     <!-- END: Search -->
                     <!-- BEGIN: Notifications -->
@@ -1430,6 +1405,7 @@
         </div>
         <!-- BEGIN: JS Assets-->
         @stack('jquery')
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG7gNHAhDzgYmq4-EHvM4bqW1DNj2UCuk&libraries=places"></script>
         <script src="{{ asset('dist/js/app.js') }}"></script>

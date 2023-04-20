@@ -21,9 +21,15 @@
                                 @endforeach
                             </select>
 
+                            @error('semester')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
+
                             <label class="mt-3" style="font-weight:bold;" for="subjectName">Subject Name</label>
                             <input name="subjectName" id="subjectName" type="text" class="form-control" placeholder="insert a new subject">
-
+                            @error('subjectName')
+                                <div class="alert alert-danger mt-2">{{ $message }}</div>
+                            @enderror
                             <button class="btn mt-3 w-100" style="background: #065e69; border-radius:0;color:#fff;">Submit</button>
                         </form>
                     </div>

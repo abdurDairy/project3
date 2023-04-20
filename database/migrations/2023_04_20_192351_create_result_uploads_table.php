@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('semester_subjects', function (Blueprint $table) {
+        Schema::create('result_uploads', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('routine_semester_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            // $table->string('Semester');
-            $table->string('Subject_Name')->unique();
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semester_subjects');
+        Schema::dropIfExists('result_uploads');
     }
 };

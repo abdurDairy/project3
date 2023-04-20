@@ -20,6 +20,11 @@ class ResultPublisherController extends Controller
 
     // ** INSERT SEMESTER DATA 
     public function insertSubjectData(Request $request){
+        $request->validate([
+            'subjectName' => 'required|unique:semester_subjects,Subject_Name',
+            'semester' => 'required',
+        ]);
+        
         $subjectInfo = new SemesterSubject();
         $subjectInfo->routine_semester_id = $request->semester;
         $subjectInfo->Subject_Name = $request->subjectName;
@@ -52,7 +57,7 @@ class ResultPublisherController extends Controller
     //**SEARCH BUTTON  */
     public function subjectSearch(Request $request){
         if($request->search_for_subject){
-            $searchData = SemesterSubject::where('Subject_Name','LIKE','%'.$request->search_for_subject.'%')->latest()->paginate(2);
+            $searchData = SemesterSubject::where('Subject_Name','LIKE','%'.$request->search_for_subject.'%')->latest()->get();
             return view('Backend.Result.searchResult',compact('searchData'));
         }else{
             return back();

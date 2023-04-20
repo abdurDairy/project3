@@ -42,7 +42,12 @@
                                 <td>{{ $teacherData->teacher_name }}</td>
                                 <td>{{ $teacherData->teacher_designetion }}</td>
                                 <td>{!! $teacherData->accademic_profile	 !!}</td>
-                                <td>{!! $teacherData->biography !!}</td>
+                                <td>{!! $teacherData->biography !!}
+                                </td>
+
+                            
+
+
                                 <td>{!! $teacherData->research_areas !!}</td>
                                 <td>{!! $teacherData->teaching_subject !!}</td>
                                 <td>

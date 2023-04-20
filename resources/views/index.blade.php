@@ -3,25 +3,23 @@
 <div class="slider-area">
     <div class="slider-active owl-carousel">
         <div class="single-slider slider-height-1 bg-img"
-            style="background-image:url({{ asset('assets/img/bg/breadcrumb-bg-3.jpg') }});">
-            <div class="opacity-image" style="background-color: rgba(17, 13, 15, 0.5); height: 844px;">
+            style="background-repeat: no-repeat;background-image:url({{ asset('assets/img/bg/convocation.jpg') }});">
+            <div class="opacity-image" style="background-color: rgba(17, 13, 15, 0.7); height: 844px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-9 col-md-7 col-12 col-sm-12">
                             <div class="slider-content slider-animated-1 pt-230">
-                                <h1 class="animated">MakeYour Own World</h1>
-                                <p class="animated">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation </p>
+                                <h1 class="animated">Department of <span style="font-weight: bold; color:rgb(55, 226, 12);">ETE</span></h1>
+                                <p class="animated">It is the one of the renowned department of international islamic university chittagong. it has Established in 03.03.2010 (Male) in permanent campus, Chittagong.Started with 30 students & few teachers and staffs.</p>
                                 <div class="slider-btn">
-                                    <a class="animated default-btn btn-green-color" href="about-us.html">ABOUT US</a>
+                                    <a class="animated default-btn btn-green-color" target="_blank" href="{{ route('about.index') }}">ABOUT US</a>
                                     <a class="animated default-btn btn-white-color" href="contact.html">CONTACT US</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="slider-single-img slider-animated-1">
-                        <img class="animated" src="assets/img/slider/single-slide-1.png" alt="">
+                        <img class="animated" src="{{ asset('assets/img/slider/slide-1.png') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -32,19 +30,17 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-7 col-12 col-sm-12">
                         <div class="slider-content slider-animated-1 pt-230">
-                            <h1 class="animated">MakeYour Own World</h1>
-                            <p class="animated">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation </p>
+                            <h1 class="animated">Department of <span style="font-weight: bold; color:aqua;">ETE</span></h1>
+                            <p class="animated">It is the one of the renowned department of international islamic university chittagong. it has Established in 03.03.2010 (Male) in permanent campus, Chittagong.Started with 30 students & few teachers and staffs.</p>
                             <div class="slider-btn">
-                                <a class="animated default-btn btn-green-color" href="about-us.html">ABOUT US</a>
+                                <a class="animated default-btn btn-green-color" target="_blank" href="{{ route('about.index') }}">ABOUT US</a>
                                 <a class="animated default-btn btn-white-color" href="contact.html">CONTACT US</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="slider-single-img slider-animated-1">
-                    <img class="animated" src="assets/img/slider/single-slide-1.png" alt="">
+                    <img class="animated" src="{{ asset('') }}" alt="">
                 </div>
             </div>
         </div>
@@ -118,7 +114,7 @@
                         nostrud exer citation ullamco laboris nisi ut perspiciatis unde omnis iste natus error sit
                         voluptate.</p>
                     <div class="about-btn mt-45">
-                        <a class="default-btn" href="about-us.html">ABOUT US</a>
+                        <a class="default-btn" target="_blank" href="{{ route('about.index') }}">ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -896,7 +892,7 @@
 <div class="course-area bg-img pt-130">
     <div class="container">
         <div class="section-title mb-75 course-mrg-small">
-            <h2> <span>Undergraduate</span> Courses</h2>
+            <h2>Our Honorable <span>Teachers </span></h2>
             <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br>veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip </p>
         </div>

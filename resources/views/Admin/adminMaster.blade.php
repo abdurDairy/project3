@@ -96,6 +96,30 @@
                 <li>
                     <a href="javascript:;" class="menu">
                         <div class="menu__icon"> <i data-feather="box"></i> </div>
+                        <div class="menu__title">Result<i data-feather="chevron-down" class="menu__sub-icon "></i> </div>
+                    </a>
+                    <ul class="">
+                        <li>
+                            <a href="{{ route('add.subject') }}" class="menu menu--active">
+                                <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="menu__title"> Add New Subject </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('blood.list') }}" class="menu menu--active">
+                                <div class="menu__icon"> <i data-feather="activity"></i> </div>
+                                <div class="menu__title"> .... </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+                <li>
+                    <a href="javascript:;" class="menu">
+                        <div class="menu__icon"> <i data-feather="box"></i> </div>
                         <div class="menu__title">Add Teacher<i data-feather="chevron-down" class="menu__sub-icon "></i> </div>
                     </a>
                     <ul class="">
@@ -674,6 +698,55 @@
                                 <a href="{{ route('blood.list') }}" class="side-menu">
                                     <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
                                     <div class="side-menu__title"> Blood List </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+                            <div class="side-menu__title">
+                               Result
+                                <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                            </div>
+                        </a>
+                        <ul class="">
+                            <li>
+                                <a href="{{ route('add.subject') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> Add New Subject </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('blood.list') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> .... </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                    <li>
+                        <a href="javascript:;.html" class="side-menu">
+                            <div class="side-menu__icon"> <i data-feather="box"></i> </div>
+                            <div class="side-menu__title">
+                               Result
+                                <div class="side-menu__sub-icon"> <i data-feather="chevron-down"></i> </div>
+                            </div>
+                        </a>
+                        <ul class="">
+                            <li>
+                                <a href="{{ route('add.subject') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> Add New Subject </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('blood.list') }}" class="side-menu">
+                                    <div class="side-menu__icon"> <i data-feather="activity"></i> </div>
+                                    <div class="side-menu__title"> .... </div>
                                 </a>
                             </li>
                         </ul>
@@ -1269,90 +1342,12 @@
                     <!-- END: Breadcrumb -->
                     <!-- BEGIN: Search -->
                     <div class="intro-x position-relative me-3 me-sm-6">
-                        <div class="search d-none d-sm-block">
-                            <input type="text" class="search__input form-control border-transparent" placeholder="Search...">
-                            <i data-feather="search" class="search__icon dark-text-gray-300"></i> 
-                        </div>
+
+                        {{-- *SEARCH BUTTON* --}}
+                        @yield('search-missing-fitch')
+                        
                         <a class="notification d-sm-none" href="index.html"> <i data-feather="search" class="notification__icon dark-text-gray-300"></i> </a>
-                        <div class="search-result">
-                            <div class="search-result__content">
-                                <div class="search-result__content__title">Pages</div>
-                                <div class="mb-5">
-                                    <a href="index.html" class="d-flex align-items-center">
-                                        <div class="w-8 h-8 bg-theme-18 text-theme-9 d-flex align-items-center justify-content-center rounded-circle"> <i class="w-4 h-4" data-feather="inbox"></i> </div>
-                                        <div class="ms-3">Mail Settings</div>
-                                    </a>
-                                    <a href="index.html" class="d-flex align-items-center mt-2">
-                                        <div class="w-8 h-8 bg-theme-17 text-theme-11 d-flex align-items-center justify-content-center rounded-circle"> <i class="w-4 h-4" data-feather="users"></i> </div>
-                                        <div class="ms-3">Users & Permissions</div>
-                                    </a>
-                                    <a href="index.html" class="d-flex align-items-center mt-2">
-                                        <div class="w-8 h-8 bg-theme-14 text-theme-10 d-flex align-items-center justify-content-center rounded-circle"> <i class="w-4 h-4" data-feather="credit-card"></i> </div>
-                                        <div class="ms-3">Transactions Report</div>
-                                    </a>
-                                </div>
-                                <div class="search-result__content__title">Users</div>
-                                <div class="mb-5">
-                                    <a href="index.html" class="d-flex align-items-center mt-2">
-                                        <div class="w-8 h-8 image-fit">
-                                            {{-- <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/profile-14.jpg"> --}}
-                                        </div>
-                                        <div class="ms-3">Robert De Niro</div>
-                                        <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">robertdeniro@left4code.com</div>
-                                    </a>
-                                    <a href="index.html" class="d-flex align-items-center mt-2">
-                                        <div class="w-8 h-8 image-fit">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/profile-3.jpg">
-                                        </div>
-                                        <div class="ms-3">Angelina Jolie</div>
-                                        <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">angelinajolie@left4code.com</div>
-                                    </a>
-                                    <a href="index.html" class="d-flex align-items-center mt-2">
-                                        <div class="w-8 h-8 image-fit">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/profile-5.jpg">
-                                        </div>
-                                        <div class="ms-3">Robert De Niro</div>
-                                        <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">robertdeniro@left4code.com</div>
-                                    </a>
-                                    <a href="index.html" class="d-flex align-items-center mt-2">
-                                        <div class="w-8 h-8 image-fit">
-                                            <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/profile-1.jpg">
-                                        </div>
-                                        <div class="ms-3">Bruce Willis</div>
-                                        <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">brucewillis@left4code.com</div>
-                                    </a>
-                                </div>
-                                <div class="search-result__content__title">Products</div>
-                                <a href="index.html" class="d-flex align-items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/preview-4.jpg">
-                                    </div>
-                                    <div class="ms-3">Sony Master Series A9G</div>
-                                    <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">Electronic</div>
-                                </a>
-                                <a href="index.html" class="d-flex align-items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/preview-1.jpg">
-                                    </div>
-                                    <div class="ms-3">Samsung Q90 QLED TV</div>
-                                    <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">Electronic</div>
-                                </a>
-                                <a href="index.html" class="d-flex align-items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/preview-11.jpg">
-                                    </div>
-                                    <div class="ms-3">Samsung Q90 QLED TV</div>
-                                    <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">Electronic</div>
-                                </a>
-                                <a href="index.html" class="d-flex align-items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Rubick Tailwind HTML Admin Template" class="rounded-circle" src="dist/images/preview-5.jpg">
-                                    </div>
-                                    <div class="ms-3">Nike Tanjun</div>
-                                    <div class="ms-auto w-48 truncate text-gray-600 fs-xs text-end">Sport &amp; Outdoor</div>
-                                </a>
-                            </div>
-                        </div>
+                       
                     </div>
                     <!-- END: Search -->
                     <!-- BEGIN: Notifications -->
@@ -1424,40 +1419,11 @@
                 </div>
                 <!-- END: Top Bar -->
                 <div class="grid columns-12 gap-6">
-                    <div class="g-col-12 g-col-xxl-9">
+                    <div class="g-col-12 g-col-xxl-12">
                         {{--MISSING FITCH  --}}
                         @yield('general-content')
                     </div>
-                    <div class="g-col-12 g-col-xxl-3">
-                        <div class="border-start-xxl border-theme-5 dark-border-dark-3 mb-n10 pb-10">
-                            <div class="ps-xxl-6 grid grid-cols-12 gap-6">
-                                <!-- BEGIN: Transactions -->
-                                <div class="g-col-12 g-col-md-6 g-col-xl-4 g-col-xxl-12 mt-3 mt-xxl-8">
-                                    <div class="intro-x d-flex align-items-center h-10">
-                                        <h2 class="fs-lg fw-medium truncate me-5">
-                                            Transactions
-                                        </h2>
-                                    </div>
-                                    <div class="mt-5">
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    {{-- <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-8.jpg"> --}}
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Keanu Reeves</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">16 July 2021</div>
-                                                </div>
-                                                <div class="text-theme-6">-$62</div>
-                                            </div>
-                                        </div>
-                                        <a href="index.html" class="intro-x w-full d-block text-center rounded-2 py-3 border border-dotted border-theme-15 dark-border-dark-5 text-theme-16 dark-text-gray-600">View More</a> 
-                                    </div>
-                                </div>
-                                <!-- END: Transactions -->
-                            </div>
-                        </div>
-                    </div>
+              
                 </div>
             </div>
             <!-- END: Content -->

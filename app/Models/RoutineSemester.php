@@ -11,4 +11,9 @@ class RoutineSemester extends Model
     public function Routine_Details(){
         return $this->hasMany(RoutineSemesterDetails::class);
     }
+    
+    public function hasSemester(){
+        return $this->hasMany(SemesterSubject::class);
+    }
+ 
 }

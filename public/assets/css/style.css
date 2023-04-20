@@ -1788,7 +1788,7 @@ textarea:focus {
 }
 
 .logo {
-  margin-top: 31px;
+  margin-top: 0px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .logo {
@@ -3507,14 +3507,14 @@ textarea:focus {
     margin: 0 0 10px;
   }
 }
-.breadcrumb-top p {
+.breadcrumb-top p{
   font-size: 16px;
   color: #fff;
   line-height: 26px;
   z-index: 9;
   position: relative;
   margin: 0;
-  width: 40%;
+  width: 90%;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .breadcrumb-top p {

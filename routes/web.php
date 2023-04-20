@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\BloodGroupController;
+use App\Http\Controllers\Backend\Result\ResultPublisherController;
 use App\Http\Controllers\Backend\Routine\RoutineController;
 use App\Http\Controllers\Backend\Teacher\TeachersController;
+use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -59,6 +61,15 @@ Route::prefix('admin')->group(function(){
     Route::put('update-routine/{id}', [RoutineController::class, 'updateRoutine'])->name('upated.routine')->middleware('admin');
     Route::get('delete-routine/{id}', [RoutineController::class, 'deleteRoutine'])->name('delete.routine')->middleware('admin');
 
+
+    // ** RESULT 
+    Route::get('add-new-subject', [ResultPublisherController::class, 'addNewSubject'])->name('add.subject')->middleware('admin');
+    Route::post('insert-subject-data', [ResultPublisherController::class, 'insertSubjectData'])->name('insert.subject')->middleware('admin');
+    Route::get('subject-list', [ResultPublisherController::class, 'subjectList'])->name('subject.list')->middleware('admin');
+    Route::get('subject-edit{id}', [ResultPublisherController::class, 'subjectEdit'])->name('subject.edit')->middleware('admin');
+    Route::put('subject-update{id}', [ResultPublisherController::class, 'subjectUpdate'])->name('subject.update')->middleware('admin');
+    Route::get('subject-search', [ResultPublisherController::class, 'subjectSearch'])->name('subject.search')->middleware('admin');
+    Route::get('delete-subject/{id}', [ResultPublisherController::class, 'deleteSubject'])->name('delete.subject')->middleware('admin');
 });
 /**
  * /****ADMIN ROUTE END
@@ -72,8 +83,15 @@ Route::prefix('admin')->group(function(){
 
 // *HOME DETAILS
   Route::get('/', [HomeController::class, 'home'])->name('index');
-  Route::prefix('teacher-profile')->group(function(){
+  Route::prefix('ete-dept-faculty-profile')->group(function(){
       Route::get('/{id}', [HomeController::class, 'homeEdit'])->name('index.details');
+  });
+
+
+
+  // *FRONTEND ABOUT DEPARTMENT 
+  Route::prefix('ete-department')->group(function(){
+    Route::get('/about', [AboutController::class, 'aboutEte'])->name('about.index');
   });
 
 

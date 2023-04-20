@@ -4,14 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Glaxdu - Education Bootstrap 5 Template</title>
+    <title>ETE Dept. of IIUC</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- FONT FAMILY CDN  --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
                 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('custom_image/iiuc_logo.png') }}">
 
     <!-- CSS
 	============================================ -->
@@ -57,8 +57,8 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-6 col-4">
                         <div class="logo">
-                            <a href="index.html">
-                                <img alt="" src="assets/img/logo/logo.png">
+                            <a href="{{ route('index') }}">
+                                <img alt="" style="width:75px;" src="{{ asset('custom_image/iiuc_logo.png') }}">
                             </a>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                                 <li><a href="index-3.html">home version 3</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html"> ABOUT </a></li>
+                                        <li><a target="_blank" href="{{ route('about.index') }}"> ABOUT </a></li>
                                         <li class="mega-menu-position top-hover"><a href="shop.html"> SHOP <i
                                                     class="fa fa-angle-down"></i> </a>
                                             <ul class="mega-menu">
@@ -228,7 +228,7 @@
                                         <li><a href="index-3.html">home version 3</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us.html">About</a></li>
+                                <li><a target="_blank" href="{{ route('about.index') }}">About</a></li>
                                 <li><a href="shop.html">Shop</a>
                                     <ul>
                                         <li><a href="index.html#">Categories 01</a>
@@ -287,7 +287,7 @@
                                         <li><a href="login-register.html">login / register</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us.html">About us</a></li>
+                                <li><a target="_blank" href="{{ route('about.index') }}">About us</a></li>
                                 <li><a href="blog.html">Blog</a>
                                     <ul>
                                         <li><a href="blog.html">blog</a></li>
@@ -346,7 +346,7 @@
                             <div class="footer-list">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a target="_blank" href="{{ route('about.index') }}">About Us</a></li>
                                     <li><a href="course.html">Courses</a></li>
                                     <li><a href="index.html#">Admission</a></li>
                                     <li><a href="index.html#">Terms & Conditions</a></li>
@@ -428,7 +428,7 @@
                         <div class="copyright">
                             <p>
                                 Copyright ©
-                                <a href="index.html#">GLAXDU</a>
+                                <a target="_blank" href="https://www.facebook.com/profile.php?id=100024372049658">md abdur rahman</a>
                                 . All Right Reserved.
                             </p>
                         </div>
@@ -474,17 +474,17 @@
 ============================================ -->
 
     <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery-v2.2.4.min.js"></script>
+    <script src="{{ asset('assets/js/vendor/jquery-v2.2.4.min.js') }}"></script>
     <!-- Popper JS -->
-    <script src="assets/js/popper.min.js"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <!-- Plugins JS -->
-    <script src="assets/js/plugins.js"></script>
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
     <!-- Ajax Mail -->
-    <script src="assets/js/ajax-mail.js"></script>
+    <script src="{{ asset('assets/js/ajax-mail.js') }}"></script>
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     {{-- TEACHER DETAILS INFO --}}
     @stack('teacher.btn')

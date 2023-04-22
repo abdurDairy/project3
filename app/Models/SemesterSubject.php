@@ -9,8 +9,13 @@ class SemesterSubject extends Model
 {
     use HasFactory;
 
-       // *RELATIONSHIP FOR SUBJECT 
-       public function subjects(){
+    public function routineSemester(){
+        return $this->belongsTo(RoutineSemester::class);
+    }
+
+    public function resultDetails(){
         return $this->hasMany(ResultDetails::class);
     }
+
+    
 }

@@ -12,8 +12,7 @@ class RoutineSemesterDetails extends Model
         return $this->belongsTo(RoutineSemester::class);
     }
     
-    // * RESULT PUBLISHER
-    public function subjectSemester(){
+    public function semesterSubject(){
         return $this->belongsTo(SemesterSubject::class);
     }
 }

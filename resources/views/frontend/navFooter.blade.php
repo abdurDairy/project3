@@ -130,7 +130,7 @@
                                         </li>
                                         <li><a href="index.html#"> PAGES <i class="fa fa-angle-down"></i> </a>
                                             <ul class="submenu">
-                                                <li><a href="course.html">course page</a></li>
+                                                <li><a href="{{ route('resultsemester.index') }}">CT result</a></li>
                                                 <li><a href="event.html">event page</a></li>
                                                 <li><a href="shop.html">shop page</a></li>
                                                 <li><a href="course-details.html">course details</a></li>
@@ -275,7 +275,7 @@
                                 </li>
                                 <li><a href="index.html#">Pages</a>
                                     <ul>
-                                        <li><a href="course.html">course page</a></li>
+                                        <li><a href="{{ route('resultsemester.index') }}">CT result</a></li>
                                         <li><a href="event.html">event page</a></li>
                                         <li><a href="shop.html">shop page</a></li>
                                         <li><a href="course-details.html">course details</a></li>

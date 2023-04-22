@@ -12,7 +12,7 @@ class RoutineSemester extends Model
         return $this->hasMany(RoutineSemesterDetails::class);
     }
     
-    public function hasSemester(){
+    public function semesterSubject(){
         return $this->hasMany(SemesterSubject::class);
     }
  

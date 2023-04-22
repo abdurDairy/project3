@@ -16,35 +16,35 @@ class RoutineSemesterSeeder extends Seeder
     public function run()
     {
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "1st Semester";
+        $SemesterForRoutine->semester = "1st-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "2nd Semester";
+        $SemesterForRoutine->semester = "2nd-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "3rd Semester";
+        $SemesterForRoutine->semester = "3rd-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "4th Semester";
+        $SemesterForRoutine->semester = "4th-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "5th Semester";
+        $SemesterForRoutine->semester = "5th-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "6th Semester";
+        $SemesterForRoutine->semester = "6th-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "7th Semester";
+        $SemesterForRoutine->semester = "7th-Semester";
         $SemesterForRoutine->save();
         
         $SemesterForRoutine= new RoutineSemester();
-        $SemesterForRoutine->semester = "8th Semester";
+        $SemesterForRoutine->semester = "8th-Semester";
         $SemesterForRoutine->save();
     }
 }

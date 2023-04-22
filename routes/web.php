@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\Routine\RoutineController;
 use App\Http\Controllers\Backend\Teacher\TeachersController;
 use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\Result\CtResultController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -73,8 +74,9 @@ Route::prefix('admin')->group(function(){
     Route::get('delete-subject/{id}', [ResultPublisherController::class, 'deleteSubject'])->name('delete.subject')->middleware('admin');
     
     // **RESULT UPLOAD
-    Route::get('upload-result', [ResultUplodeController::class, 'uploadResult'])->name('upload.result')->middleware('admin');;
-    Route::get('select-subject', [ResultUplodeController::class, 'selectSubject'])->name('select.subject')->middleware('admin');;
+    Route::get('upload-result', [ResultUplodeController::class, 'uploadResult'])->name('upload.result')->middleware('admin');
+    Route::get('select-subject', [ResultUplodeController::class, 'selectSubject'])->name('select.subject')->middleware('admin');
+    Route::post('insert-results', [ResultUplodeController::class, 'insertResult'])->name('insert.result')->middleware('admin');
 });
 /**
  * /****ADMIN ROUTE END
@@ -99,10 +101,23 @@ Route::prefix('admin')->group(function(){
     Route::get('/about', [AboutController::class, 'aboutEte'])->name('about.index');
   });
 
+  // ** RESULT 
+  Route::prefix('result')->group(function(){
+    Route::get('/semester', [CtResultController::class, 'resultSemester'])->name('resultsemester.index');
+    Route::get('/subject/{id}', [CtResultController::class, 'resultSubject'])->name('resultsubject.index');
+  });
 
-
-  
 // ***FRONT END END 
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/dashboard', function () {
